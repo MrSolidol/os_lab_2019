@@ -1,0 +1,50 @@
+    1  history
+    2  cd ../../lab3/src
+    3  cp find_min_max.c find_min_max.h parallel_min_max.c utils.c utils.h makefile sequential_min_max.c ../../lab4/src/
+    4  cd ../../lab4/src/
+    5  gcc parallel_min_max.c find_min_max.c utils.c -o parallelminmax
+    6  /parallelminmax --seed "1" --array_size "100" --pnum "10"--timeout 100
+    7  ./parallelminmax --seed "1" --array_size "100" --pnum "10"--timeout 100
+    8  ./parallelminmax --seed "1" --array_size "100" --pnum "10" --timeout 100
+    9  ./parallelminmax --seed "1" --array_size "100" --pnum "10" --timeout 10000
+   10  ./parallelminmax --seed "1" --array_size "100" --pnum "10" --timeout 1000000
+   11  rm parallelminmax 
+   12  cat zoombie.c
+   13  cat > zoombie.c
+   14  gcc zoombie.c -o zoombie
+   15  ./zoombie 
+   16  rm zoombie
+   17  history > history.txt
+   18  gcc process_memory.c process_memory
+   19  gcc process_memory.c -o process_memory
+   20  ./process_memory
+   21  rm process_memory
+   22  make
+   23  make сдуфт
+   24  make clan
+   25  make clean
+   26  rm utils.o find_min_max.o
+   27  make
+   28  make clean
+   29  rm utils.o find_min_max.o
+   30  cat sum,c
+   31  cat sum.c
+   32  cat > sum.c
+   33  cat > sum.h
+   34  make
+   35  make сдуфт
+   36  make сlean
+   37  make clean
+   38  make
+   39  ./parallel_sum --threads_num "3" --seed "10" --array_size "100"
+   40  ./parallel_sum --threads_num "5" --seed "10" --array_size "100"
+   41  ./parallel_sum --threads_num "5" --seed "10" --array_size "10000"
+   42  ./parallel_sum --threads_num "1" --seed "10" --array_size "10000"
+   43  ./parallel_sum --threads_num "1" --seed "10" --array_size "1000000"
+   44  ./parallel_sum --threads_num "3" --seed "10" --array_size "1000000"
+   45  ./parallel_sum --threads_num "5" --seed "10" --array_size "1000000"
+   46  ./parallel_sum --threads_num "10" --seed "10" --array_size "1000000"
+   47  make clean
+   48  make
+   49  make clean
+   50  history > history.txt 
