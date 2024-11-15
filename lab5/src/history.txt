@@ -1,0 +1,17 @@
+    1  cd lab5/src/
+    2  gcc mutex.c -o mutex -pthread
+    3  ./mutex
+    4  gcc mutex.c -o mutex_with_mutex -pthread
+    5  ./mutex_with_mutex 
+    6  history > history.txt
+    7  touch factorial.c
+    8  gcc factorial.c -o factorial
+    9  gcc factorial.c -o factorial -pthread
+   10  ./factorial -k 10 --pnum=4 --mod=10
+   11  ./factorial -k 10 --pnum=4 --mod=1000
+   12  history > history.txt 
+   13  touch deadlock.c
+   14  gcc deadlock.c -o deadlock -pthread
+   15  ./deadlock
+   16  rm deadlock factorial mutex mutex_with_mutex 
+   17  history > history.txt 
