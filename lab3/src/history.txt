@@ -1,0 +1,36 @@
+    1  ll
+    2  cd lab3/
+    3  cd src/
+    4  ll
+    5  gcc sequential_min_max.c find_min_max.c utils.c -o "minmax" >& errorfile.txt
+    6  ./minmax 1 10
+    7  ./minmax 1 11000
+    8  ./minmax 4 110000000
+    9  history > history.txt
+   10  ./parallelminmax 2 10
+   11  ./parallelminmax 2 10 pnum by_files
+   12  ./parallelminmax 2 10 10 by_files
+   13  ./parallelminmax --seed "1" --array_size "100" --pnum "10"
+   14  ./parallelminmax --seed "1" --array_size "100" --pnum "10" --by_files "f"
+   15  ./parallelminmax --seed "1" --array_size "100" --pnum "10" --by_files "1"
+   16  ./parallelminmax --seed "1" --array_size "100" --pnum "10" --by_files
+   17  history > history.txt
+   18  cat > exec.c
+   19  ./makefile
+   20  make
+   21  ./parallel_min_max --seed "1" --array_size "100" --pnum "10"
+   22  rm utils.o find_min_max.o sequential_min_max parallel_min_max
+   23  rm parallelminmax 
+   24  rm minmax 
+   25  gcc exec.c -o exec
+   26  ./exec 
+   27  make
+   28  ./exec 
+   29  ./parallelminmax --seed "1" --array_size "100" --pnum "10" --with_files 
+   30  gcc parallel_min_max.c find_min_max.c utils.c -o parallelminmax
+   31  ./parallelminmax --seed "1" --array_size "100" --pnum "10" --with_files 
+   32  ./parallel_min_max --seed "1" --array_size "100" --pnum "10" --with_files 
+   33  ./parallel_min_max --seed "1" --array_size "100" --pnum "10" --by_files 
+   34  make
+   35  make clean
+   36  history > history.txt
