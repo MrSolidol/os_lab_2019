@@ -1,0 +1,16 @@
+    1  cd ../../lab7/src/
+    2  touch makefile
+    3  make
+    4  ./tcpserver 20005
+    5  ./tcpserver 20005 &
+    6  ./tcpclient 127.0.0.1 20005
+    7  jobs
+    8  kill 31205
+    9  ./tcpclient 127.0.0.1 20005
+   10  ./udpserver 20001 &
+   11  ./udpclient 
+   12  ./udpclient 127.0.0.1
+   13  kill 32709
+   14  ./udpclient 127.0.0.1
+   15  make clean
+   16  history > history.txt
