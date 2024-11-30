@@ -15,11 +15,15 @@
 #include "find_min_max.h"
 #include "utils.h"
 
+int pnum = -1;
+
+pid_t* child_proc;
 
 bool timed_out = false;
 
 void sigcheck(int signo) {
     timed_out = true;
+    |_chd(child_proc, pnum);
     printf("Время вышло!\n");
 }
 
@@ -34,7 +38,6 @@ int kill_chd(pid_t* pids, const int size){
 int main(int argc, char **argv) {
     int seed = -1;
     int array_size = -1;
-    int pnum = -1;
     int timeout = -1;
     bool with_files = false;
 
@@ -139,7 +142,7 @@ int main(int argc, char **argv) {
         pipefmm=(int**)malloc(sizeof(int*) * pnum);
     }
 
-    pid_t child_proc[pnum];
+    child_proc = malloc(sizeof(pid_t) * pnum);
     signal(SIGALRM, sigcheck);
     alarm(timeout);
     for (int i = 0; i < pnum; i++) {
@@ -197,10 +200,6 @@ int main(int argc, char **argv) {
     printf("%d\n",finish_time.tv_usec - start_time.tv_usec);
 
     while (active_child_processes > 0) {
-        if(timed_out) {
-            kill_chd(child_proc, pnum);
-            return 2;
-        }
 
         if (waitpid(-1, &status_pid, WNOHANG) > 0) {
             active_child_processes -= 1;
@@ -241,6 +240,7 @@ int main(int argc, char **argv) {
     }
 
     free(array);
+    free(child_proc);
 
     printf("Min: %d\n", min_max.min);
     printf("Max: %d\n", min_max.max);
