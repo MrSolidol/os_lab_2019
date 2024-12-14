@@ -1,0 +1,10 @@
+cd lab1/src
+./background.sh &
+clear
+cat > text2.txt 
+wc -m text2.txt
+
+grep "cake" cake_rhymes.txt > with_cake.txt
+rm text.txt 2> /dev/null
+./hello.sh
+xargs ./average.sh < numbers.txt
